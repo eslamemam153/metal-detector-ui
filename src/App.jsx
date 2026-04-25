@@ -4,7 +4,7 @@ import imgAjoo  from "./assets/ajoo.png";
 import imgMoamen   from "./assets/momen.png";
 import imgHelal from "./assets/helal.png";
 import imgRana     from "./assets/rana.png";
-import imgEslam    from "./assets/rana.png";
+import imgEslam    from "./assets/eslam.png";
 /* ── PALETTE: Obsidian Luxury ── */
 const P = {
   black:   "#000000",
