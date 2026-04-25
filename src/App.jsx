@@ -258,12 +258,12 @@ const BOM = [
 ];
 
 const TEAMS = [
-  { img:<img src="./assets/Yooooh.png" alt="" />,name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
-  { img:<img src="./assets/Ajoo.png" alt="" />,name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
-  { img:<img src="./assets/Mooooo.png" alt="" />,name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,   tasks: ["Regulated 5V power supply", "Circuit protection"] },
-  { img:<img src="./assets/Helooo.png" alt="" />,name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,   tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
-  { img:<img src="./assets/Roooooo.png" alt="" />,name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,  tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
-  { img:<img src="./assets/Emooooo.png" alt="" />,name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson,tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
+  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img: "../public/images/Yooooh.png",   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
+  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img: "../public/images/Ajoo.png", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
+  { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,    img: "../public/images/Mooooo.png",  tasks: ["Regulated 5V power supply", "Circuit protection"] },
+  { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,    img: "../public/images/Helooo.png", tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
+  { id: "H3", name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,   img: "../public/images/Roooooo.png",    tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
+  { id: "H4", name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson, img: "../public/images/Emooooo.png",   tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
 ];
 
 /* ── Main Component ── */
@@ -511,17 +511,44 @@ export default function App() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(215px, 1fr))", gap: 12 }}>
             {TEAMS.map(t => (
               <LuxCard key={t.id}>
-                <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, paddingBottom: 12, borderBottom: `1px solid ${P.steel}` }}>
-                  <div style={{
-                    width: 36, height: 36, borderRadius: 4, flexShrink: 0,
-                    background: t.color + "18", border: `1px solid ${t.color}44`,
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontFamily: "'DM Mono', monospace", fontSize: 11, color: t.color, fontWeight: 500,
-                  }}>{t.id}</div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 14, paddingBottom: 12, borderBottom: `1px solid ${P.steel}` }}>
+                  {/* Avatar */}
+                  <div style={{ position: "relative", flexShrink: 0 }}>
+                    <img
+                      src={t.img}
+                      alt={t.name}
+                      onError={e => { e.currentTarget.style.display = "none"; e.currentTarget.nextSibling.style.display = "flex"; }}
+                      style={{
+                        width: 48, height: 48, borderRadius: "50%",
+                        objectFit: "cover",
+                        border: `2px solid ${t.color}66`,
+                        boxShadow: `0 0 10px ${t.color}33`,
+                        display: "block",
+                      }}
+                    />
+                    {/* Fallback initials if image fails */}
+                    <div style={{
+                      display: "none", width: 48, height: 48, borderRadius: "50%",
+                      background: t.color + "18", border: `2px solid ${t.color}66`,
+                      alignItems: "center", justifyContent: "center",
+                      fontFamily: "'DM Mono', monospace", fontSize: 13,
+                      color: t.color, fontWeight: 600,
+                      boxShadow: `0 0 10px ${t.color}33`,
+                    }}>
+                      {t.name.split(" ").map(w => w[0]).join("").slice(0, 2)}
+                    </div>
+                    {/* Role badge */}
+                    <div style={{
+                      position: "absolute", bottom: -4, right: -4,
+                      background: t.color, borderRadius: 3, padding: "1px 5px",
+                      fontFamily: "'DM Mono', monospace", fontSize: 8,
+                      color: P.black, fontWeight: 700, letterSpacing: "0.05em",
+                    }}>{t.id}</div>
+                  </div>
                   <div style={{ minWidth: 0 }}>
                     <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: P.mist, letterSpacing: "0.15em", textTransform: "uppercase" }}>{t.team}</div>
                     <div style={{ fontSize: 13, fontWeight: 600, color: P.snow, marginTop: 2, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.name}</div>
-                    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: t.color, marginTop: 1 }}>ID: {t.sid}</div>
+                    <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: t.color, marginTop: 2 }}>ID · {t.sid}</div>
                   </div>
                 </div>
                 {t.tasks.map(task => (
