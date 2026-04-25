@@ -1,5 +1,10 @@
 import { useState } from "react";
-
+import imgYomna    from "./assets/yomna.jpg";
+import imgAjoo  from "./assets/ajoo.jpg";
+import imgMoamen   from "./assets/momen.jpg";
+import imgHelal from "./assets/helal.jpg";
+import imgRana     from "./assets/rana.jpg";
+import imgEslam    from "./assets/eslam.jpg";
 /* ── PALETTE: Obsidian Luxury ── */
 const P = {
   black:   "#000000",
@@ -258,12 +263,12 @@ const BOM = [
 ];
 
 const TEAMS = [
-  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshR4QXQNNk03Kwz5j2zrYc4SAXBcDX6VK6jOJ29NGZpxXH-MYeC-EQKJRU62FZKewIdQM6LvxVR-ncuhf2Vw6IPDUOAvYTrAO5Hj7XE4&s=10",   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
-  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img: "./assets/Ajoo.png", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
-  { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,    img: "../public/images/Mooooo.png",  tasks: ["Regulated 5V power supply", "Circuit protection"] },
-  { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,    img: "../public/images/Helooo.png", tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
-  { id: "H3", name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,   img: "../public/images/Roooooo.png",    tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
-  { id: "H4", name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson, img: "../public/images/Emooooo.png",   tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
+  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img:imgYomna,   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
+  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img:imgAjoo, tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
+  { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,    img:imgMoamen,  tasks: ["Regulated 5V power supply", "Circuit protection"] },
+  { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,    img:imgHelal, tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
+  { id: "H3", name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,   img:imgRana,    tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
+  { id: "H4", name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson, img:imgEslam,   tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
 ];
 
 /* ── Main Component ── */
