@@ -1,10 +1,10 @@
 import { useState } from "react";
-import imgYomna    from "./assets/yomna.jpg";
-import imgAjoo  from "./assets/ajoo.jpg";
-import imgMoamen   from "./assets/momen.jpg";
-import imgHelal from "./assets/helal.jpg";
-import imgRana     from "./assets/rana.jpg";
-import imgEslam    from "./assets/eslam.jpg";
+import imgYomna    from "./assets/yomna.png";
+import imgAjoo  from "./assets/ajoo.png";
+import imgMoamen   from "./assets/momen.png";
+import imgHelal from "./assets/helal.png";
+import imgRana     from "./assets/rana.png";
+import imgEslam    from "./assets/rana.png";
 /* ── PALETTE: Obsidian Luxury ── */
 const P = {
   black:   "#000000",
