@@ -259,7 +259,7 @@ const BOM = [
 
 const TEAMS = [
   { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img: "../public/images/Yooooh.png",   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
-  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img: "../public/images/Ajoo.png", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
+  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img: "./assets/Ajoo.png", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
   { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,    img: "../public/images/Mooooo.png",  tasks: ["Regulated 5V power supply", "Circuit protection"] },
   { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,    img: "../public/images/Helooo.png", tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
   { id: "H3", name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,   img: "../public/images/Roooooo.png",    tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
