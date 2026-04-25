@@ -258,7 +258,7 @@ const BOM = [
 ];
 
 const TEAMS = [
-  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img: "../public/images/Yooooh.png",   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
+  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTshR4QXQNNk03Kwz5j2zrYc4SAXBcDX6VK6jOJ29NGZpxXH-MYeC-EQKJRU62FZKewIdQM6LvxVR-ncuhf2Vw6IPDUOAvYTrAO5Hj7XE4&s=10",   tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
   { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", img: "./assets/Ajoo.png", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
   { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,    img: "../public/images/Mooooo.png",  tasks: ["Regulated 5V power supply", "Circuit protection"] },
   { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,    img: "../public/images/Helooo.png", tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
