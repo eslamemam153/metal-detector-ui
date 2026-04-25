@@ -258,12 +258,12 @@ const BOM = [
 ];
 
 const TEAMS = [
-  {  name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
-  {  name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
-  {  name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,   tasks: ["Regulated 5V power supply", "Circuit protection"] },
-  {  name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,   tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
-  {  name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,  tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
-  {  name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson,tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
+  { id:<img src="./assets/Yooooh.png" alt="" />,name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
+  { id:<img src="./assets/Ajoo.png" alt="" />,name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
+  { id:<img src="./assets/Mooooo.png" alt="" />,name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,   tasks: ["Regulated 5V power supply", "Circuit protection"] },
+  { id:<img src="./assets/Helooo.png" alt="" />,name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,   tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
+  { id:<img src="./assets/Roooooo.png" alt="" />,name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,  tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
+  { id:<img src="./assets/Emooooo.png" alt="" />,name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson,tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
 ];
 
 /* ── Main Component ── */
