@@ -208,11 +208,11 @@ function LuxCard({ children, style = {}, glow = false, onClick, className = "" }
 
 /* ── Data ── */
 const FLOW = [
-  { id: 1, num: "01", icon: "◈", label: "Signal Generation", sub: "LC Oscillator",        color: P.teal,   dim: P.tealDim,   desc: "LC tank circuit generates a stable ~50 kHz carrier. Proximity of a conductive object alters coil inductance, producing a measurable frequency shift." },
-  { id: 2, num: "02", icon: "◉", label: "Acquisition",       sub: "Timer1 · Counter Mode", color: P.violet, dim: P.violetDim, desc: "ATmega32 Timer1 configured as an external event counter. Rising edges accumulated over a fixed 100 ms window yield a discrete frequency reading." },
-  { id: 3, num: "03", icon: "⊕", label: "Calibration",       sub: "baseline_freq",         color: P.amber,  dim: P.amberDim,  desc: "At power-up or on button press, the ambient frequency is captured as baseline_freq. Eliminates ground mineralisation and environmental drift." },
-  { id: 4, num: "04", icon: "⊗", label: "Processing",        sub: "Δf = f_cur − f_base",   color: P.violet, dim: P.violetDim, desc: "Firmware computes a signed delta every cycle. Threshold comparison classifies the result into one of three detection states." },
-  { id: 5, num: "05", icon: "◎", label: "Output",            sub: "LCD · Buzzer · LED",    color: P.sage,   dim: P.sageDim,   desc: "Metal type and signal magnitude rendered on LCD 16×2. Buzzer PWM rate scales with proximity. LED provides optional visual confirmation." },
+  { id: 1, num: "01", icon: "⚡", label: "Signal Generation", sub: "LC Oscillator",        color: P.teal,   dim: P.tealDim,   desc: "LC tank circuit generates a stable ~50 kHz carrier. Proximity of a conductive object alters coil inductance, producing a measurable frequency shift." },
+  { id: 2, num: "02", icon: "📡", label: "Acquisition",       sub: "Timer1 · Counter Mode", color: P.violet, dim: P.violetDim, desc: "ATmega32 Timer1 configured as an external event counter. Rising edges accumulated over a fixed 100 ms window yield a discrete frequency reading." },
+  { id: 3, num: "03", icon: "🎯", label: "Calibration",       sub: "baseline_freq",         color: P.amber,  dim: P.amberDim,  desc: "At power-up or on button press, the ambient frequency is captured as baseline_freq. Eliminates ground mineralisation and environmental drift." },
+  { id: 4, num: "04", icon: "🧠", label: "Processing",        sub: "Δf = f_cur − f_base",   color: P.violet, dim: P.violetDim, desc: "Firmware computes a signed delta every cycle. Threshold comparison classifies the result into one of three detection states." },
+  { id: 5, num: "05", icon: "📊", label: "Output",            sub: "LCD · Buzzer · LED",    color: P.sage,   dim: P.sageDim,   desc: "Metal type and signal magnitude rendered on LCD 16×2. Buzzer PWM rate scales with proximity. LED provides optional visual confirmation." },
 ];
 
 const REQS = {
@@ -239,8 +239,6 @@ const REQS = {
     { id: "RR-01", desc: "Sampling window fixed at 100 ms per measurement cycle.", priority: "Must" },
     { id: "RR-02", desc: "Firmware shall handle Timer1 overflow without measurement discontinuity.", priority: "Must" },
     { id: "RR-03", desc: "System response time — detection to display update — shall not exceed 300 ms.", priority: "Must" },
-    { id: "RR-04", desc: "Analogue and digital power planes physically separated to prevent cross-coupling.", priority: "Should" },
-    { id: "RR-05", desc: "Inter-module interfaces defined and documented prior to parallel development.", priority: "Must" },
   ],
 };
 
@@ -257,16 +255,15 @@ const BOM = [
   { group: "Oscillator", color: P.teal,   items: ["Search Coil — 15t, ⌀10cm", "Tank Capacitor", "Transistor BC547"] },
   { group: "Interface",  color: P.amber,  items: ["LCD 16×2", "Potentiometer (contrast)", "Push Button (CAL)"] },
   { group: "Output",     color: P.gold,   items: ["Active Buzzer", "Driver Transistor", "Current-Limit Resistor", "LED Indicators"] },
-  { group: "Optional",   color: P.mist,   items: ["OLED 128×64 I2C", "HC-05 Bluetooth", "NEO-6M GPS"] },
 ];
 
 const TEAMS = [
-  { id: "S1", name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
-  { id: "S2", name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
-  { id: "H1", name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,   tasks: ["Regulated 5V power supply", "Circuit protection"] },
-  { id: "H2", name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,   tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
-  { id: "H3", name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,  tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
-  { id: "H4", name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson,tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
+  {  name: "Yomna Mohammed", sid: "23166", team: "Software", color: P.violet,  tasks: ["Signal Processing", "Timer1 frequency calc", "Baseline delta computation"] },
+  {  name: "Youssef Hamed",  sid: "23170", team: "Software", color: "#9B59B6", tasks: ["UI & LCD management", "Decision logic", "PWM buzzer control", "Integration"] },
+  {  name: "Moamen Ashraf",  sid: "23159", team: "Hardware", color: P.sage,   tasks: ["Regulated 5V power supply", "Circuit protection"] },
+  {  name: "Youssef Helal",  sid: "23176", team: "Hardware", color: P.teal,   tasks: ["LC Oscillator design", "Coil fabrication", "Frequency tuning"] },
+  {  name: "Rana Kenawy",    sid: "23041", team: "Hardware", color: P.amber,  tasks: ["ATmega32 PCB layout", "Crystal + Reset circuit", "ISP interface"] },
+  {  name: "Eslam Emam",     sid: "23200", team: "Hardware", color: P.crimson,tasks: ["LCD wiring", "Buzzer driver circuit", "Final assembly"] },
 ];
 
 /* ── Main Component ── */
@@ -296,7 +293,7 @@ export default function App() {
         {/* ── HEADER ── */}
         <div className="fade-up" style={{ textAlign: "center", marginBottom: 72 }}>
           <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, letterSpacing: "0.4em", color: P.goldLo, textTransform: "uppercase", marginBottom: 20 }}>
-            Step 01 · System Architecture & Requirements · Embedded Systems Design · Spring 2026
+            EMBEDDED SYSTEMS DESIGN · SPRING 2026
           </div>
 
           <h1 style={{
@@ -481,9 +478,9 @@ export default function App() {
           </div>
         </section>
 
-        {/* ── BOM ── */}
+        {/* ── Project Components ── */}
         <section className="fade-up" style={{ marginBottom: 72, animationDelay: "0.4s" }}>
-          <SectionHeader num="04 · Bill of Materials" title="Hardware Components" subtitle="Grouped by functional subsystem" />
+          <SectionHeader num="04 · Project Components" title="Hardware Components" subtitle="Grouped by functional subsystem" />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
             {BOM.map(grp => (
               <LuxCard key={grp.group}>
@@ -543,7 +540,7 @@ export default function App() {
           <div className="gold-line" />
           <div style={{ marginTop: 20, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 16, color: P.mist, fontWeight: 500 }}>Smart Metal Detector</div>
-            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: P.ghost, letterSpacing: "0.2em" }}>SMART METAL DETECTOR · EMBEDDED SYSTEMS DESIGN · SPRING 2026</div>
+            <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 10, color: P.ghost, letterSpacing: "0.2em" }}>EMBEDDED SYSTEMS DESIGN · SPRING 2026</div>
             <GoldBadge label="Final Draft" />
           </div>
         </div>
